@@ -1,6 +1,6 @@
 [submodule "lib/nlohmannjson"]
 	path = lib/nlohmannjson
 	url = https://github.com/nlohmann/json.git
-[submodule "lib/curlpp"]
-	path = lib/curlpp
-	url = https://github.com/jpbarrette/curlpp.git
+[submodule "lib/beast"]
+	path = lib/beast
+	url = https://github.com/vinniefalco/Beast.git
