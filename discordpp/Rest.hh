@@ -2,8 +2,8 @@
 // Created by aidan on 5/28/17.
 //
 
-#ifndef DISCORD_AIDOBOT_REST_HH
-#define DISCORD_AIDOBOT_REST_HH
+#ifndef DISCORDPP_REST_HH
+#define DISCORDPP_REST_HH
 
 #include <json.hpp>
 #include <boost/asio.hpp>
@@ -36,4 +36,4 @@ namespace discordpp{
 }
 
 
-#endif //DISCORD_AIDOBOT_REST_HH
+#endif //DISCORDPP_REST_HH
