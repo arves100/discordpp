@@ -5,7 +5,7 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES  src/Rest.cc discordpp/Rest.hh) # discordpp/discordpp.hh src/discordpp.cc discordpp/bot.hh src/bot.cc
+set(SOURCE_FILES  src/Rest.cc discordpp/Rest.hh src/Websocket.cc discordpp/Websocket.hh) # discordpp/discordpp.hh src/discordpp.cc discordpp/bot.hh src/bot.cc
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES})
 
 target_include_directories (${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/lib/beast/include ${CMAKE_CURRENT_SOURCE_DIR}/lib/nlohmannjson/src)
