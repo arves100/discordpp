@@ -9,13 +9,11 @@ Links:
 Requirements <sup>(I got these through APT)</sup>
 ---
 * [Boost](http://www.boost.org/)
-* [OpenSSL](https://www.openssl.org/)
 * [Crypto++](https://www.cryptopp.com/)
-* [Websocket++](http://www.zaphoyd.com/websocketpp)
 
 Included <sup>(Git submodules)</sup>
 ---
-* [cURLpp](https://github.com/jpbarrette/curlpp)
+* [Beast](https://github.com/vinniefalco/Beast)
 * [nlohmann::json](https://github.com/nlohmann/json)
 
 Building <sup>(Complicated)</sup>

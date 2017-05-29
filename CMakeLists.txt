@@ -8,16 +8,14 @@ set(CMAKE_CXX_STANDARD 11)
 set(SOURCE_FILES  src/Rest.cc discordpp/Rest.hh) # discordpp/discordpp.hh src/discordpp.cc discordpp/bot.hh src/bot.cc
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES})
 
-target_include_directories (${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories (${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/lib/beast/include ${CMAKE_CURRENT_SOURCE_DIR}/lib/nlohmannjson/src)
 
 set(Boost_USE_STATIC_LIBS OFF)
-find_package(Boost REQUIRED coroutine filesystem program_options) # system
+find_package(Boost REQUIRED system) # coroutine filesystem program_options
 set(BOOST_INCLUDEDIR ${Boost_INCLUDE_DIRS})
 
-add_subdirectory("lib/nlohmannjson")
-add_subdirectory("lib/beast")
+find_package(OpenSSL)
 
-MESSAGE(STATUS ${json_INCLUDE_DIRS})
-MESSAGE(STATUS "BOOP BOOP BOOP BOOP BOOP BOOP BOOP BOOP BOOP BOOP ")
-INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIRS} ${json_INCLUDE_DIRS} "lib/beast/include" "lib/nlohmannjson/src") #SYSTEM PRIVATE
-TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${Boost_LIBRARIES} pthread ssl crypto)
+
+INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIRS} ${OPENSSL_INCLUDE_DIR}) #SYSTEM PRIVATE
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${Boost_LIBRARIES} ${OPENSSL_LIBRARIES} pthread ssl crypto)
